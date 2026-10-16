@@ -24,6 +24,14 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
         });
+        // Exercise 3: Mouse hover effect
+        square.addEventListener("mouseover", function() {
+        square.classList.add("hover");
+                });
+
+        square.addEventListener("mouseout", function() {
+        square.classList.remove("hover");
+        });
 
     });
 
