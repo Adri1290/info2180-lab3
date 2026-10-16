@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         square.addEventListener("click", function() {
 
             //   Prevent moves after a win
-            // and prevent overwriting occupied squares
+            // Exercise 6: Prevent cheating (prevent overwriting occupied squares)
             if (gameOver || square.textContent !== "") {
                 return;
             }
