@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPlayer = "X";
 
     const status = document.getElementById("status");
+    
+    // Exercise 5 - New Game button
+    const newGameButton = document.querySelector(".btn");
+
+    // Save the original status message
+    const originalStatus = status.textContent;
+
 
     const winningCombinations = [
         [0, 1, 2],
@@ -93,5 +100,27 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+    
+    // Exercise 5 - Restart the game
+    newGameButton.addEventListener("click", function() {
+
+        // Clear all squares
+        squares.forEach(function(square) {
+            square.textContent = "";
+            square.classList.remove("X", "O", "hover");
+        });
+
+        // Reset the player
+        currentPlayer = "X";
+
+        // Allow the game to start again
+        gameOver = false;
+
+        // Restore the original status message
+        status.textContent = originalStatus;
+        status.classList.remove("you-won");
+
+    });
+
 
 });
